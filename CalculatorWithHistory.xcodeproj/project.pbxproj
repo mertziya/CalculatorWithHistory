@@ -6,30 +6,29 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C64DDE182D11AE4000E1DF34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64DDE102D11AE4000E1DF34 /* AppDelegate.swift */; };
+		C64DDE192D11AE4000E1DF34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64DDE152D11AE4000E1DF34 /* SceneDelegate.swift */; };
+		C64DDE1B2D11AE4000E1DF34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64DDE112D11AE4000E1DF34 /* Assets.xcassets */; };
+		C64DDE1D2D11AE4000E1DF34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64DDE142D11AE4000E1DF34 /* LaunchScreen.storyboard */; };
+		C64DDE252D11AED700E1DF34 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64DDE1E2D11AED700E1DF34 /* CalculatorViewController.swift */; };
+		C64DDE262D11AED700E1DF34 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64DDE222D11AED700E1DF34 /* GradientView.swift */; };
+		C64DDE272D11AED700E1DF34 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64DDE212D11AED700E1DF34 /* CustomButton.swift */; };
+		C64DDE282D11AED700E1DF34 /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C64DDE1F2D11AED700E1DF34 /* CalculatorViewController.xib */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C64DDDF82D11ADF200E1DF34 /* CalculatorWithHistory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculatorWithHistory.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C64DDE102D11AE4000E1DF34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C64DDE112D11AE4000E1DF34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C64DDE122D11AE4000E1DF34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C64DDE132D11AE4000E1DF34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C64DDE152D11AE4000E1DF34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C64DDE1E2D11AED700E1DF34 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		C64DDE1F2D11AED700E1DF34 /* CalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
+		C64DDE212D11AED700E1DF34 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		C64DDE222D11AED700E1DF34 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C64DDE0A2D11ADF300E1DF34 /* Exceptions for "CalculatorWithHistory" folder in "CalculatorWithHistory" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = C64DDDF72D11ADF200E1DF34 /* CalculatorWithHistory */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		C64DDDFA2D11ADF200E1DF34 /* CalculatorWithHistory */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				C64DDE0A2D11ADF300E1DF34 /* Exceptions for "CalculatorWithHistory" folder in "CalculatorWithHistory" target */,
-			);
-			path = CalculatorWithHistory;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C64DDDF52D11ADF200E1DF34 /* Frameworks */ = {
@@ -45,7 +44,7 @@
 		C64DDDEF2D11ADF200E1DF34 = {
 			isa = PBXGroup;
 			children = (
-				C64DDDFA2D11ADF200E1DF34 /* CalculatorWithHistory */,
+				C64DDE172D11AE4000E1DF34 /* CalculatorWithHistory */,
 				C64DDDF92D11ADF200E1DF34 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +55,46 @@
 				C64DDDF82D11ADF200E1DF34 /* CalculatorWithHistory.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C64DDE172D11AE4000E1DF34 /* CalculatorWithHistory */ = {
+			isa = PBXGroup;
+			children = (
+				C64DDE112D11AE4000E1DF34 /* Assets.xcassets */,
+				C64DDE122D11AE4000E1DF34 /* Info.plist */,
+				C64DDE142D11AE4000E1DF34 /* LaunchScreen.storyboard */,
+				C64DDE152D11AE4000E1DF34 /* SceneDelegate.swift */,
+				C64DDE102D11AE4000E1DF34 /* AppDelegate.swift */,
+				C64DDE242D11AED700E1DF34 /* View */,
+			);
+			path = CalculatorWithHistory;
+			sourceTree = "<group>";
+		};
+		C64DDE202D11AED700E1DF34 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C64DDE1E2D11AED700E1DF34 /* CalculatorViewController.swift */,
+				C64DDE1F2D11AED700E1DF34 /* CalculatorViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C64DDE232D11AED700E1DF34 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				C64DDE212D11AED700E1DF34 /* CustomButton.swift */,
+				C64DDE222D11AED700E1DF34 /* GradientView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		C64DDE242D11AED700E1DF34 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C64DDE202D11AED700E1DF34 /* Controllers */,
+				C64DDE232D11AED700E1DF34 /* CustomViews */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +111,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				C64DDDFA2D11ADF200E1DF34 /* CalculatorWithHistory */,
 			);
 			name = CalculatorWithHistory;
 			packageProductDependencies = (
@@ -122,6 +158,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64DDE1B2D11AE4000E1DF34 /* Assets.xcassets in Resources */,
+				C64DDE282D11AED700E1DF34 /* CalculatorViewController.xib in Resources */,
+				C64DDE1D2D11AE4000E1DF34 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +171,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64DDE182D11AE4000E1DF34 /* AppDelegate.swift in Sources */,
+				C64DDE252D11AED700E1DF34 /* CalculatorViewController.swift in Sources */,
+				C64DDE262D11AED700E1DF34 /* GradientView.swift in Sources */,
+				C64DDE272D11AED700E1DF34 /* CustomButton.swift in Sources */,
+				C64DDE192D11AE4000E1DF34 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C64DDE142D11AE4000E1DF34 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C64DDE132D11AE4000E1DF34 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C64DDE0C2D11ADF300E1DF34 /* Debug */ = {
@@ -150,7 +205,6 @@
 				INFOPLIST_FILE = CalculatorWithHistory/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -178,7 +232,6 @@
 				INFOPLIST_FILE = CalculatorWithHistory/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
