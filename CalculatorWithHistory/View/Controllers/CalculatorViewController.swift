@@ -87,10 +87,13 @@ extension CalculatorViewController{
         multiplicationButton.addTarget(self, action: #selector(tapped), for: .touchUpInside)
         minusButton.addTarget(self, action: #selector(tapped), for: .touchUpInside)
         plusButton.addTarget(self, action: #selector(tapped), for: .touchUpInside)
+        modulusButton.addTarget(self, action: #selector(tapped), for: .touchUpInside)
         
         resetButton.addTarget(self, action: #selector(initializeResultLabel), for: .touchUpInside)
         
         equalsButton.addTarget(self, action: #selector(calculate), for: .touchUpInside)
+        
+        deleteButton.addTarget(self, action: #selector(deleteNumber), for: .touchUpInside)
         
         initializeResultLabel()
     }
@@ -118,33 +121,41 @@ extension CalculatorViewController{
         self.resultLabel.textAlignment = .right
     }
     
-    @objc private func calculate(){
-        guard let calculationString = self.resultLabel.text else{print("DEBUG: nil value") ; return}
-        
+    @objc private func calculate() {
+        guard let calculationString = self.resultLabel.text else {
+            print("DEBUG: nil value")
+            return
+        }
+
+        // Replace 'x' with '*' for multiplication
         let formattedString = calculationString.replacingOccurrences(of: "x", with: "*")
-        guard let floatString = evaluateCalculationString(formattedString) else {return}
-        let newHistory = History(calculation: calculationString, result: String(floatString))
-        
+
+        // Evaluate the calculation string
+        guard let floatResult = evaluateCalculationString(formattedString) else { return }
+        let newHistory = History(calculation: calculationString, result: String(floatResult))
+
         self.histories.append(newHistory)
-        
         self.resultLabel.text = newHistory.result
         self.historyLabel.text = newHistory.calculation
     }
-    
+
     func evaluateCalculationString(_ formattedString: String) -> Float? {
-        
-        guard isValidExpression(formattedString) else{
-            
+        // Validate the expression
+        guard isValidExpression(formattedString) else {
             self.resultLabel.text = "WRONG FORMAT"
-            DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.initializeResultLabel()
             }
             return nil
         }
-        
+
+        // Process modulus operations manually
+        if formattedString.contains("%") {
+            return evaluateWithModulus(formattedString)
+        }
+
+        // Use NSExpression for other operations
         let expression = NSExpression(format: formattedString)
-        
-        // Try to evaluate the expression
         if let result = expression.expressionValue(with: nil, context: nil) as? NSNumber {
             return result.floatValue
         } else {
@@ -152,13 +163,44 @@ extension CalculatorViewController{
             return nil
         }
     }
+
+    func evaluateWithModulus(_ expression: String) -> Float? {
+        var modifiedExpression = expression
+
+        while let range = modifiedExpression.range(of: #"[0-9\.]+%[0-9\.]+"#, options: .regularExpression) {
+            let match = String(modifiedExpression[range]) // e.g., "5%3"
+            let components = match.split(separator: "%").compactMap { Float($0) }
+            if components.count == 2 {
+                let modulusResult = components[0].truncatingRemainder(dividingBy: components[1])
+                modifiedExpression = modifiedExpression.replacingOccurrences(of: match, with: String(modulusResult))
+            } else {
+                return nil
+            }
+        }
+
+        // Evaluate the remaining expression with NSExpression
+        let expression = NSExpression(format: modifiedExpression)
+        if let result = expression.expressionValue(with: nil, context: nil) as? NSNumber {
+            return result.floatValue
+        } else {
+            print("Evaluation failed for: \(modifiedExpression)")
+            return nil
+        }
+    }
     
     func isValidExpression(_ expression: String) -> Bool {
-        // Regular expression to allow valid numbers and operators
-        let regex = "^[0-9\\.]+([\\+\\-\\*/][0-9\\.]+)*$"
+        // Regular expression to allow valid numbers and operators, including modulus (%)
+        let regex = "^[0-9\\.]+([\\+\\-\\*/%][0-9\\.]+)*$"
         
         let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
         return predicate.evaluate(with: expression)
+    }
+    
+    @objc private func deleteNumber() {
+        guard let text = self.resultLabel.text, !text.isEmpty else {
+            return // Do nothing if the text is nil or empty
+        }
+        self.resultLabel.text = String(text.dropLast())
     }
 
 }

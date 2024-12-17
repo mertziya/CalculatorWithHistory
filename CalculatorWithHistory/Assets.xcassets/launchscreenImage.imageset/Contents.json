@@ -1,10 +1,24 @@
 {
   "images" : [
     {
+      "filename" : "lightIcon.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
       "filename" : "darkIcon.png",
       "idiom" : "universal",
-      "platform" : "ios",
-      "size" : "1024x1024"
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
     },
     {
       "appearances" : [
@@ -14,19 +28,21 @@
         }
       ],
       "idiom" : "universal",
-      "platform" : "ios",
-      "size" : "1024x1024"
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     },
     {
       "appearances" : [
         {
           "appearance" : "luminosity",
-          "value" : "tinted"
+          "value" : "dark"
         }
       ],
       "idiom" : "universal",
-      "platform" : "ios",
-      "size" : "1024x1024"
+      "scale" : "3x"
     }
   ],
   "info" : {
