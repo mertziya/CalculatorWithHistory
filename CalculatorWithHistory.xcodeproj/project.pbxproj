@@ -60,12 +60,12 @@
 		C64DDE172D11AE4000E1DF34 /* CalculatorWithHistory */ = {
 			isa = PBXGroup;
 			children = (
+				C64DDE242D11AED700E1DF34 /* View */,
 				C64DDE112D11AE4000E1DF34 /* Assets.xcassets */,
 				C64DDE122D11AE4000E1DF34 /* Info.plist */,
 				C64DDE142D11AE4000E1DF34 /* LaunchScreen.storyboard */,
 				C64DDE152D11AE4000E1DF34 /* SceneDelegate.swift */,
 				C64DDE102D11AE4000E1DF34 /* AppDelegate.swift */,
-				C64DDE242D11AED700E1DF34 /* View */,
 			);
 			path = CalculatorWithHistory;
 			sourceTree = "<group>";
