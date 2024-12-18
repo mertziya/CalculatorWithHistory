@@ -119,6 +119,9 @@ extension CalculatorViewController{
         self.resultLabel.textColor = UIColor.systemGray2.withAlphaComponent(0.4)
         self.resultLabel.text = "..."
         self.resultLabel.textAlignment = .right
+        
+        self.historyLabel.textColor = UIColor.systemGray
+        self.historyLabel.text = "."
     }
     
     @objc private func calculate() {
